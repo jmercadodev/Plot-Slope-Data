@@ -2,7 +2,6 @@ from matplotlib.widgets import Cursor
 import matplotlib.pyplot as plt
 from matplotlib import style
 import numpy as np
-import math
 
 def calc_slope(start, end, run):
     rise = start-end 
