@@ -43,7 +43,6 @@ def calc_slope_data(elev, slope, dist, step):
                     xytext = (dist_list[each_cor]  - 0, elev_list[each_cor] + .5) , bbox = box 
                 )
 
-    print('Plotting Data')
     ax.plot(dist_list, elev_list, '#f71993', label = 'Slope: {}' .format(slope))
 
     cursor = Cursor(ax, useblit=True, color='#666666', linewidth=1)    
@@ -59,3 +58,4 @@ s = calc_slope(50, 100,100)
 # Given Slope and starting point, calculate elevations for range of any distance
 # calc_slope_data(elev, slope, dist, step):
 calc_slope_data(44, .5, 60, 5)
+
