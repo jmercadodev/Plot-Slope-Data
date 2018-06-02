@@ -5,9 +5,9 @@ import numpy as np
 
 def calc_slope(start, end, run):
     rise = start-end 
-    s = rise / run 
+    slope = rise / run 
 
-    return round(s,2)
+    return round(slope,2)
 
 def calc_slope_data(elev, slope, dist, step):
     dist_list = []
@@ -15,9 +15,8 @@ def calc_slope_data(elev, slope, dist, step):
 
     for each_dist in range(dist):
         diff = each_dist * slope 
-
         new_elev = elev - diff
-        print(each_dist, round(new_elev,2), '\n')
+#         print(each_dist, round(new_elev,2), '\n')
         
         dist_list.append(each_dist)
         elev_list.append(round(new_elev,2))
@@ -28,7 +27,7 @@ def calc_slope_data(elev, slope, dist, step):
         file.write(str(elev_list)) 
 
     file.close() 
-    print('File Created')
+#     print('File Created')
 
     style.use('ggplot')
     fig = plt.figure()
@@ -40,8 +39,7 @@ def calc_slope_data(elev, slope, dist, step):
         ax.annotate(
             '{} , {} '.format(dist_list[each_cor], elev_list[each_cor]),
                 (dist_list[each_cor], elev_list[each_cor]), 
-                    xytext = (dist_list[each_cor]  - 0, elev_list[each_cor] + .5) , bbox = box 
-                )
+                    xytext = (dist_list[each_cor]  - 0, elev_list[each_cor] + .5) , bbox = box)
 
     ax.plot(dist_list, elev_list, '#f71993', label = 'Slope: {}' .format(slope))
 
@@ -52,10 +50,9 @@ def calc_slope_data(elev, slope, dist, step):
     plt.legend()
     plt.show()
 
-# calc_slope(start, end, run)
-s = calc_slope(50, 100,100)
+'''calc_slope(start, end, run)'''
+# s = calc_slope(50, 100,100)
+# print(s)
 
-# Given Slope and starting point, calculate elevations for range of any distance
-# calc_slope_data(elev, slope, dist, step):
+'''calc_slope_data(elev, slope, dist, step)'''
 calc_slope_data(44, .5, 60, 5)
-
