@@ -16,7 +16,6 @@ def calc_slope_data(elev, slope, dist, step):
     for each_dist in range(dist):
         diff = each_dist * slope 
         new_elev = elev - diff
-#         print(each_dist, round(new_elev,2), '\n')
         
         dist_list.append(each_dist)
         elev_list.append(round(new_elev,2))
@@ -27,7 +26,6 @@ def calc_slope_data(elev, slope, dist, step):
         file.write(str(elev_list)) 
 
     file.close() 
-#     print('File Created')
 
     style.use('ggplot')
     fig = plt.figure()
